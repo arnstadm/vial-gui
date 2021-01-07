@@ -77,14 +77,14 @@ class Unlocker(QWidget):
             unlocked = data[0]
             unlock_counter = data[2]
 
-            self.progress.setMaximum(max(self.progress.maximum(), unlock_counter))
-            self.progress.setValue(self.progress.maximum() - unlock_counter)
+            # self.progress.setMaximum(max(self.progress.maximum(), unlock_counter))
+            # self.progress.setValue(self.progress.maximum() - unlock_counter)
+            #
+            # if unlocked == 1:
+            #     break
 
-            if unlocked == 1:
-                break
-
-            QCoreApplication.processEvents()
-            time.sleep(0.2)
+            # QCoreApplication.processEvents()
+            # time.sleep(0.02)
 
         # ok all done, the keyboard is now set to insecure state
         self.hide()

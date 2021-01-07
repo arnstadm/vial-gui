@@ -343,7 +343,7 @@ class Keyboard:
         if self.vial_protocol < 0:
             return b""
 
-        data = self.usb_send(self.dev, struct.pack("BB", CMD_VIA_VIAL_PREFIX, CMD_VIAL_UNLOCK_POLL))
+        data = self.usb_send(self.dev, struct.pack("BB", CMD_VIA_VIAL_PREFIX, CMD_VIAL_UNLOCK_POLL), retries=20)
         return data
 
     def lock(self):
